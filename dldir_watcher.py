@@ -3,17 +3,12 @@
 # dydrmntion@gmail.com
 
 import os
-import time
 import subprocess
 import json
 from contextlib import contextmanager
 from argparse import ArgumentParser
 
-from persistent import persistent_data
-
 persistent_data_fpath = '/tmp/dldir_watcher.json~'
-
-
 
 
 @contextmanager
@@ -56,4 +51,3 @@ if __name__ == '__main__':
     parser.add_argument('--script', '-s', type=expand_user_path, help='eg. python ~/proc.py')
     args = vars(parser.parse_args())
     scan_directory(**args)
-
